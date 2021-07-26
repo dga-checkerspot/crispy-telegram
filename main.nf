@@ -3,6 +3,12 @@
 params.reads='s3://algaetranscriptomics/CHK*_R{1,2}_001.fastq.gz'
 geno='s3://invertase/CHK15_computomics_scrB_extraction.fasta'
 
+Channel
+	.fromFilePairs(params.reads)
+	.ifEmpty {error "Cannot find any reads matching: ${params.reads}"}
+	.set { read_pairs_ch }
+
+
 
 process minimapALIGN {
 
