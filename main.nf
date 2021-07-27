@@ -1,6 +1,6 @@
 #!/usr/bin/env nextflow
 
-params.reads='s3://algaetranscriptomics/CHK*_R{1,2}_001.fastq.gz'
+params.reads='s3://algae.chk15.transcriptome/CHK*_R{1,2}_001.fastq.gz'
 geno='s3://invertase/CHK15_computomics_scrB_extraction.fasta'
 
 Channel
